@@ -197,6 +197,7 @@ async function play({ member, guild, channel }, query) {
     player = guild.client.musicManager.createPlayer(guild.id);
     player.queue.data.channel = channel;
     player.connect(member.voice.channel.id, { deafened: true });
+    player.setVolume(1)
   }
 
   // do queue things
