@@ -224,6 +224,10 @@ router.post("/:serverID/greeting", CheckAuth, async (req, res) => {
       settings.welcome.content = data.content;
     }
 
+    data.title = data.title?.replace(/\r?\n/g, "\\n");
+    if (data.title && data.title !== settings.welcome.embed?.title) {
+      settings.welcome.embed.title = data.title;
+    }
     data.description = data.description?.replaceAll(/\r\n/g, "\\n");
     if (data.description && data.description !== settings.welcome.embed?.description) {
       settings.welcome.embed.description = data.description;

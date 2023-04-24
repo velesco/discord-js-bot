@@ -40,6 +40,7 @@ const parse = async (content, member, inviterData = {}) => {
     .replaceAll(/{member:name}/g, member.user.username)
     .replaceAll(/{member:dis}/g, member.user.discriminator)
     .replaceAll(/{member:tag}/g, member.user.tag)
+    .replaceAll(/{member:id}/g, member.user.id)
     .replaceAll(/{member:avatar}/g, member.displayAvatarURL())
     .replaceAll(/{inviter:name}/g, inviteData.name)
     .replaceAll(/{inviter:tag}/g, inviteData.tag)
@@ -65,6 +66,7 @@ const buildGreeting = async (member, type, config, inviterData) => {
     const parsed = await parse(config.embed.description, member, inviterData);
     embed.setDescription(parsed);
   }
+  if (config.embed.title) embed.setTitle(config.embed.title);
   if (config.embed.color) embed.setColor(config.embed.color);
   if (config.embed.thumbnail) embed.setThumbnail(member.user.displayAvatarURL());
   if (config.embed.footer) {
@@ -85,7 +87,7 @@ const buildGreeting = async (member, type, config, inviterData) => {
     return { content };
   }
 
-  return { content, embeds: [embed] };
+  return {  embeds: [embed] };
 };
 
 /**
