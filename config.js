@@ -1,6 +1,6 @@
 module.exports = {
   OWNER_IDS: ['975222363702571078'], // Bot owner ID's
-  SUPPORT_SERVER: "615923702764273674", // Your bot support server
+  SUPPORT_SERVER: "https://discord.com/invite/8DFZzsp", // Your bot support server
   PREFIX_COMMANDS: {
     ENABLED: true, // Enable/Disable prefix commands
     DEFAULT_PREFIX: "v!", // Default prefix for the bot
@@ -9,7 +9,7 @@ module.exports = {
     SLASH: true, // Should the interactions be enabled
     CONTEXT: true, // Should contexts be enabled
     GLOBAL: true, // Should the interactions be registered globally
-    TEST_GUILD_ID: "615923702764273674", // Guild ID where the interactions should be registered. [** Test you commands here first **]
+    TEST_GUILD_ID: "discord.rotransexpress.ro", // Guild ID where the interactions should be registered. [** Test you commands here first **]
   },
   EMBED_COLORS: {
     BOT_EMBED: "#068ADD",
@@ -76,12 +76,12 @@ module.exports = {
   },
 
   IMAGE: {
-    ENABLED: false,
+    ENABLED: true,
     BASE_API: "https://strangeapi.fun/api",
   },
 
   INVITE: {
-    ENABLED: false,
+    ENABLED: true,
   },
 
   MODERATION: {
